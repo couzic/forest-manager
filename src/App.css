@@ -1,0 +1,7 @@
+body {
+  background-color: grey;
+}
+
+.leaflet-container.crosshair-cursor-enabled {
+  cursor: crosshair;
+}
