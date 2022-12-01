@@ -257,16 +257,17 @@ export const initialPlantState: PlantState = {
       currentDiameter: 1,
       expectedDiameter: 5,
     },
-    {
-      id: createPlantId(),
-      name: "Pommier Reinette Clochard" as PlantName,
-      position: {
-        lat: 48.62696006731648,
-        lng: -2.4338425976380234,
-      },
-      currentDiameter: 1,
-      expectedDiameter: 5,
-    },
+    // DEAD
+    // {
+    //   id: createPlantId(),
+    //   name: "Pommier Reinette Clochard" as PlantName,
+    //   position: {
+    //     lat: 48.62696006731648,
+    //     lng: -2.4338425976380234,
+    //   },
+    //   currentDiameter: 1,
+    //   expectedDiameter: 5,
+    // },
     {
       id: createPlantId(),
       name: "Pommier Winter Banana" as PlantName,
@@ -297,16 +298,17 @@ export const initialPlantState: PlantState = {
       currentDiameter: 1,
       expectedDiameter: 5,
     },
-    {
-      id: createPlantId(),
-      name: "Pommier Jonagold" as PlantName,
-      position: {
-        lat: 48.62692285007371,
-        lng: -2.4337462480414307,
-      },
-      currentDiameter: 1,
-      expectedDiameter: 5,
-    },
+    // DEAD
+    // {
+    //   id: createPlantId(),
+    //   name: "Pommier Jonagold" as PlantName,
+    //   position: {
+    //     lat: 48.62692285007371,
+    //     lng: -2.4337462480414307,
+    //   },
+    //   currentDiameter: 1,
+    //   expectedDiameter: 5,
+    // },
     {
       id: createPlantId(),
       name: "Pommier Reine des Reinettes" as PlantName,
@@ -346,7 +348,7 @@ export const initialPlantState: PlantState = {
     },
     {
       id: createPlantId(),
-      name: "Mirabellier (A PLANTER & VERIFIER POSITION)" as PlantName,
+      name: "Mirabellier (ouest) (A PLANTER & VERIFIER POSITION)" as PlantName,
       position: {
         lat: 48.62716432476134,
         lng: -2.434004522879002,
@@ -356,13 +358,43 @@ export const initialPlantState: PlantState = {
     },
     {
       id: createPlantId(),
-      name: "Mirabellier (A PLANTER & VERIFIER POSITION)" as PlantName,
+      name: `Mirabellier (est) + Framboisier "Malling Promise"` as PlantName,
       position: {
-        lat: 48.62709233286805,
-        lng: -2.4335760514677065,
+        lat: 48.62709013337869,
+        lng: -2.433573126366655,
       },
       currentDiameter: 1,
       expectedDiameter: 5,
+    },
+    {
+      id: createPlantId(),
+      name: 'Mirabellier (sud) + Framboisier "Malling Promise"' as PlantName,
+      position: {
+        lat: 48.62706913734805,
+        lng: -2.433862153982798,
+      },
+      currentDiameter: 1,
+      expectedDiameter: 5,
+    },
+    {
+      id: createPlantId(),
+      name: 'Mûre-Framboise "Tayberry" (nord)' as PlantName,
+      position: {
+        lat: 48.62716731931881,
+        lng: -2.4336448059796263,
+      },
+      currentDiameter: 1,
+      expectedDiameter: 2,
+    },
+    {
+      id: createPlantId(),
+      name: 'Mûre-Framboise "Tayberry" (sud)' as PlantName,
+      position: {
+        lat: 48.627154900604815,
+        lng: -2.4336507433488506,
+      },
+      currentDiameter: 1,
+      expectedDiameter: 2,
     },
   ],
   byRelativeDistance: { a: {}, b: {} },
