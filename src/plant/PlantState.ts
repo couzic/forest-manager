@@ -131,10 +131,10 @@ export const initialPlantState: PlantState = {
     },
     {
       id: createPlantId(),
-      name: "Figuier Goutte d'Or (sud) (A PLANTER & VERIFIER POSITION)" as PlantName,
+      name: "Figuier Goutte d'Or (sud) + Framboisier Fallgold" as PlantName,
       position: {
-        lat: 48.62705477676527,
-        lng: -2.4337900352653574,
+        lat: 48.62705421334569,
+        lng: -2.433793824264601,
       },
       currentDiameter: 1,
       expectedDiameter: 6,
@@ -341,8 +341,11 @@ export const initialPlantState: PlantState = {
     },
     {
       id: createPlantId(),
-      name: "Figuier Goutte d'Or (nord) (A PLANTER & VERIFIER POSITION)" as PlantName,
-      position: { lat: 48.627290461170816, lng: -2.4337986551296455 },
+      name: "Figuier Goutte d'Or (nord) + Framboisier Fallgold" as PlantName,
+      position: {
+        lat: 48.62728831604013,
+        lng: -2.4338011455951922,
+      },
       currentDiameter: 1,
       expectedDiameter: 6,
     },
