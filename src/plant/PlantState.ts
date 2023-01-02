@@ -141,16 +141,6 @@ export const initialPlantState: PlantState = {
     },
     {
       id: createPlantId(),
-      name: "Prunier Myrobolan (entrée friche) (A PLANTER & VERIFIER POSITION)" as PlantName,
-      position: {
-        lat: 48.62724291047721,
-        lng: -2.4335227108136057,
-      },
-      currentDiameter: 1,
-      expectedDiameter: 6,
-    },
-    {
-      id: createPlantId(),
       name: "Reine-Claude Dorée (est)" as PlantName,
       currentDiameter: 2,
       expectedDiameter: 8,
@@ -183,16 +173,6 @@ export const initialPlantState: PlantState = {
       currentDiameter: 2,
       expectedDiameter: 8,
       position: { lat: 48.627218963500724, lng: -2.433994173642041 },
-    },
-    {
-      id: createPlantId(),
-      name: "Abricotier (entrée friche) (A SEMER & VERIFIER POSITION)" as PlantName,
-      position: {
-        lat: 48.627120900722204,
-        lng: -2.4338379900968623,
-      },
-      currentDiameter: 1,
-      expectedDiameter: 8,
     },
     {
       id: createPlantId(),
@@ -257,17 +237,6 @@ export const initialPlantState: PlantState = {
       currentDiameter: 1,
       expectedDiameter: 5,
     },
-    // DEAD
-    // {
-    //   id: createPlantId(),
-    //   name: "Pommier Reinette Clochard" as PlantName,
-    //   position: {
-    //     lat: 48.62696006731648,
-    //     lng: -2.4338425976380234,
-    //   },
-    //   currentDiameter: 1,
-    //   expectedDiameter: 5,
-    // },
     {
       id: createPlantId(),
       name: "Pommier Winter Banana" as PlantName,
@@ -298,17 +267,6 @@ export const initialPlantState: PlantState = {
       currentDiameter: 1,
       expectedDiameter: 5,
     },
-    // DEAD
-    // {
-    //   id: createPlantId(),
-    //   name: "Pommier Jonagold" as PlantName,
-    //   position: {
-    //     lat: 48.62692285007371,
-    //     lng: -2.4337462480414307,
-    //   },
-    //   currentDiameter: 1,
-    //   expectedDiameter: 5,
-    // },
     {
       id: createPlantId(),
       name: "Pommier Reine des Reinettes" as PlantName,
@@ -349,16 +307,7 @@ export const initialPlantState: PlantState = {
       currentDiameter: 1,
       expectedDiameter: 6,
     },
-    {
-      id: createPlantId(),
-      name: "Mirabellier (ouest) (A PLANTER & VERIFIER POSITION)" as PlantName,
-      position: {
-        lat: 48.62716432476134,
-        lng: -2.434004522879002,
-      },
-      currentDiameter: 1,
-      expectedDiameter: 5,
-    },
+
     {
       id: createPlantId(),
       name: `Mirabellier (est) + Framboisier "Malling Promise"` as PlantName,
@@ -398,6 +347,226 @@ export const initialPlantState: PlantState = {
       },
       currentDiameter: 1,
       expectedDiameter: 2,
+    },
+    {
+      id: createPlantId(),
+      name: "Prunier Myrobolan (entrée friche)" as PlantName,
+      position: {
+        lat: 48.62724291047721,
+        lng: -2.4335227108136057,
+      },
+      currentDiameter: 1,
+      expectedDiameter: 6,
+      status: "to plant",
+    },
+    {
+      id: createPlantId(),
+      name: "Mirabellier (ouest)" as PlantName,
+      position: {
+        lat: 48.62716432476134,
+        lng: -2.434004522879002,
+      },
+      currentDiameter: 1,
+      expectedDiameter: 5,
+      status: "position requires verification",
+    },
+    {
+      id: createPlantId(),
+      name: "Abricotier" as PlantName,
+      position: {
+        lat: 48.627120900722204,
+        lng: -2.4338379900968623,
+      },
+      currentDiameter: 1,
+      expectedDiameter: 8,
+      status: "to sow",
+    },
+    {
+      id: createPlantId(),
+      name: "Sureau (sud I)" as PlantName,
+      position: {
+        lat: 48.626803996444195,
+        lng: -2.4337757997711815,
+      },
+      currentDiameter: 1,
+      expectedDiameter: 5,
+      status: "to sow",
+    },
+    {
+      id: createPlantId(),
+      name: "Sureau (sud II)" as PlantName,
+      position: {
+        lat: 48.62684242897869,
+        lng: -2.433810969489309,
+      },
+      currentDiameter: 1,
+      expectedDiameter: 5,
+      status: "to sow",
+    },
+    {
+      id: createPlantId(),
+      name: "Sureau (sud III)" as PlantName,
+      position: {
+        lat: 48.6269209832563,
+        lng: -2.4338768466754797,
+      },
+      currentDiameter: 1,
+      expectedDiameter: 5,
+      status: "to sow",
+    },
+    {
+      id: createPlantId(),
+      name: "Abricot" as PlantName,
+      position: {
+        lat: 48.62728961333356,
+        lng: -2.4340140856932653,
+      },
+      currentDiameter: 1,
+      expectedDiameter: 8,
+      status: "to sow",
+    },
+    {
+      id: createPlantId(),
+      name: "Cerisier" as PlantName,
+      position: {
+        lat: 48.62734191758474,
+        lng: -2.4339395213742074,
+      },
+      currentDiameter: 1,
+      expectedDiameter: 8,
+      status: "to sow",
+    },
+    {
+      id: createPlantId(),
+      name: "Reine-Claude" as PlantName,
+      position: {
+        lat: 48.627358446329104,
+        lng: -2.4340453359502194,
+      },
+      currentDiameter: 1,
+      expectedDiameter: 8,
+      status: "to sow",
+    },
+    {
+      id: createPlantId(),
+      name: "Noyer" as PlantName,
+      position: {
+        lat: 48.62741308931791,
+        lng: -2.4339545900006554,
+      },
+      currentDiameter: 1,
+      expectedDiameter: 12,
+      status: "to sow",
+    },
+    {
+      id: createPlantId(),
+      name: "Arbousier" as PlantName,
+      position: {
+        lat: 48.626996186688075,
+        lng: -2.433812079920929,
+      },
+      currentDiameter: 1,
+      expectedDiameter: 4,
+      status: "position requires verification",
+    },
+    {
+      id: createPlantId(),
+      name: "Pêcher" as PlantName,
+      position: {
+        lat: 48.62708499315286,
+        lng: -2.4338088351421843,
+      },
+      currentDiameter: 0.5,
+      expectedDiameter: 3,
+      status: "to sow",
+    },
+    {
+      id: createPlantId(),
+      name: "Pêche plate" as PlantName,
+      position: {
+        lat: 48.62714136599475,
+        lng: -2.4336582519787657,
+      },
+      currentDiameter: 1,
+      expectedDiameter: 3,
+      status: "to sow",
+    },
+    {
+      id: createPlantId(),
+      name: "Prunier sauvage" as PlantName,
+      position: {
+        lat: 48.62699993002823,
+        lng: -2.433879457591311,
+      },
+      currentDiameter: 1,
+      expectedDiameter: 6,
+      status: "to sow",
+    },
+    {
+      id: createPlantId(),
+      name: "Mirabellier" as PlantName,
+      position: {
+        lat: 48.62695850998061,
+        lng: -2.4338464230059786,
+      },
+      currentDiameter: 1,
+      expectedDiameter: 5,
+      status: "to sow",
+    },
+    {
+      id: createPlantId(),
+      name: "Quetsche" as PlantName,
+      position: {
+        lat: 48.626923826624974,
+        lng: -2.433743667154352,
+      },
+      currentDiameter: 1,
+      expectedDiameter: 5,
+      status: "to sow",
+    },
+    {
+      id: createPlantId(),
+      name: "Pommier" as PlantName,
+      position: {
+        lat: 48.62691361134894,
+        lng: -2.4336705313219182,
+      },
+      currentDiameter: 1,
+      expectedDiameter: 6,
+      status: "to sow",
+    },
+    {
+      id: createPlantId(),
+      name: "Pommier" as PlantName,
+      position: {
+        lat: 48.62688199365422,
+        lng: -2.4337084682763916,
+      },
+      currentDiameter: 1,
+      expectedDiameter: 6,
+      status: "to sow",
+    },
+    {
+      id: createPlantId(),
+      name: "Albizia" as PlantName,
+      position: {
+        lat: 48.62705532298839,
+        lng: -2.4337052307447697,
+      },
+      currentDiameter: 1,
+      expectedDiameter: 6,
+      status: "to sow",
+    },
+    {
+      id: createPlantId(),
+      name: "Mirabellier/Myrobolan" as PlantName,
+      position: {
+        lat: 48.62741194585056,
+        lng: -2.4336796522262376,
+      },
+      currentDiameter: 1,
+      expectedDiameter: 5,
+      status: "to plant",
     },
   ],
   byRelativeDistance: { a: {}, b: {} },

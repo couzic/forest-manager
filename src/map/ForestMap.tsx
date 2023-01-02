@@ -8,14 +8,22 @@ import {
   Tooltip,
 } from "react-leaflet";
 import { core } from "../core";
-import { Plant } from "../domain/Plant";
+import { Plant, PlantStatus } from "../domain/Plant";
 import { AddPlantByRelativeDistancePossiblePositions } from "../plant/add/AddPlantByRelativeDistancePossiblePositions";
 import { reactiveComponent } from "../util/reactiveComponent";
 import { Parcels } from "./Parcels";
 
 const center: LatLngExpression = [48.6271, -2.4337];
 
-const plantColor = "#89b717";
+const plantColorByStatus: Record<PlantStatus, string> = {
+  "to plant": "blue",
+  "to sow": "lightblue",
+  sowed: "lightgreen",
+  "position requires verification": "red",
+};
+
+const getPlantColor = (plant: Plant) =>
+  plant.status ? plantColorByStatus[plant.status] : "#89b717";
 
 const { store } = core.plant;
 
@@ -44,7 +52,7 @@ export const ForestMap = reactiveComponent(store.pick("list"), ({ list }) => (
           eventHandlers={{ click: onPlantClick(plant) }}
           center={plant.position}
           radius={plant.expectedDiameter / 2}
-          fillColor={plantColor}
+          fillColor={getPlantColor(plant)}
           fillOpacity={0.2}
           stroke={false}
         >
@@ -59,7 +67,7 @@ export const ForestMap = reactiveComponent(store.pick("list"), ({ list }) => (
           eventHandlers={{ click: onPlantClick(plant) }}
           center={plant.position}
           radius={plant.currentDiameter / 2}
-          fillColor={plantColor}
+          fillColor={getPlantColor(plant)}
           fillOpacity={1}
           stroke={false}
         >
