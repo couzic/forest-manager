@@ -1,88 +1,64 @@
-import { LatLngExpression } from "leaflet";
-import { keys } from "ramda";
 import {
-  Circle,
-  MapContainer,
-  ScaleControl,
-  TileLayer,
-  Tooltip,
-} from "react-leaflet";
+  faAnglesLeft,
+  faAnglesRight,
+} from "@fortawesome/pro-regular-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { LatLngExpression } from "leaflet";
+import { MapContainer, ScaleControl, TileLayer } from "react-leaflet";
 import { core } from "../core";
-import { Plant, PlantStatus } from "../domain/Plant";
 import { AddPlantByRelativeDistancePossiblePositions } from "../plant/add/AddPlantByRelativeDistancePossiblePositions";
+import { PlantMarkers } from "../plant/PlantMarkers";
 import { reactiveComponent } from "../util/reactiveComponent";
+import { ForestMapMenu } from "./ForestMapMenu";
 import { Parcels } from "./Parcels";
 
 const center: LatLngExpression = [48.6271, -2.4337];
 
-const plantColorByStatus: Record<PlantStatus, string> = {
-  "to plant": "blue",
-  "to sow": "lightblue",
-  sowed: "lightgreen",
-  "position requires verification": "red",
-};
+const { store } = core.menu;
 
-const getPlantColor = (plant: Plant) =>
-  plant.status ? plantColorByStatus[plant.status] : "#89b717";
+const onToogleMenuVisibilityButtonClick = store.action("toggleMenuVisibility");
 
-const { store } = core.plant;
-
-const onPlantClick = (plant: Plant) => () =>
-  store.dispatch({ plantClicked: plant });
-
-export const ForestMap = reactiveComponent(store.pick("list"), ({ list }) => (
-  <MapContainer
-    style={{ width: "80vw", height: "100vh" }}
-    center={center}
-    zoom={20}
-    attributionControl={false}
-  >
-    <TileLayer
-      // url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
-      url="https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}"
-      maxNativeZoom={19}
-      maxZoom={25}
-    />
-    <ScaleControl imperial={false} position="bottomright" />
-    <Parcels />
-    {list.map((plant) => (
-      <div key={plant.id}>
-        {/* Expected */}
-        <Circle
-          eventHandlers={{ click: onPlantClick(plant) }}
-          center={plant.position}
-          radius={plant.expectedDiameter / 2}
-          fillColor={getPlantColor(plant)}
-          fillOpacity={0.2}
-          stroke={false}
-        >
-          <Tooltip direction="top">
-            <h3>{plant.name}</h3>
-            <h4>Diamètre actuel: {plant.currentDiameter}m</h4>
-            <h4>Diamètre attendu: {plant.expectedDiameter}m</h4>
-          </Tooltip>
-        </Circle>
-        {/* Current */}
-        <Circle
-          eventHandlers={{ click: onPlantClick(plant) }}
-          center={plant.position}
-          radius={plant.currentDiameter / 2}
-          fillColor={getPlantColor(plant)}
-          fillOpacity={1}
-          stroke={false}
-        >
-          <Tooltip direction="top">
-            {keys(plant).map((key) => (
-              <div key={key}>
-                {key}: {JSON.stringify(plant[key])}
-              </div>
-            ))}
-          </Tooltip>
-        </Circle>
-        {/* Shadow */}
-        {/* TODO */}
-      </div>
-    ))}
-    <AddPlantByRelativeDistancePossiblePositions />
-  </MapContainer>
+export const ForestMap = reactiveComponent(store.pick("visible"), (menu) => (
+  <>
+    <div style={{ width: menu.visible ? "80vw" : "100vw", height: "100vh" }}>
+      <MapContainer
+        style={{ width: "100%", height: "100%" }}
+        center={center}
+        zoom={20}
+        attributionControl={false}
+      >
+        <TileLayer
+          // url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
+          url="https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}"
+          maxNativeZoom={19}
+          maxZoom={25}
+        />
+        <ScaleControl imperial={false} position="bottomright" />
+        <div className="leaflet-top leaflet-right">
+          <div
+            className="leaflet-control leaflet-bar"
+            style={{ cursor: "pointer" }}
+          >
+            <a onClick={onToogleMenuVisibilityButtonClick}>
+              <FontAwesomeIcon
+                icon={menu.visible ? faAnglesRight : faAnglesLeft}
+              />
+            </a>
+          </div>
+        </div>
+        <Parcels />
+        <PlantMarkers />
+      </MapContainer>
+    </div>
+    <div
+      style={{
+        display: menu.visible ? "inherit" : "none",
+        width: "20vw",
+        height: "100vh",
+      }}
+    >
+      <AddPlantByRelativeDistancePossiblePositions />
+      <ForestMapMenu />
+    </div>
+  </>
 ));
