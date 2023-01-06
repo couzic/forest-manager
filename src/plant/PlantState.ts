@@ -350,14 +350,14 @@ export const initialPlantState: PlantState = {
     },
     {
       id: createPlantId(),
-      name: "Prunier Myrobolan (entrée friche)" as PlantName,
+      name: "Prunier Sauvage + Framboisier Fallgold" as PlantName,
       position: {
         lat: 48.62724291047721,
         lng: -2.4335227108136057,
       },
       currentDiameter: 1,
       expectedDiameter: 6,
-      status: "to plant",
+      status: "position requires verification",
     },
     {
       id: createPlantId(),
@@ -460,7 +460,7 @@ export const initialPlantState: PlantState = {
     },
     {
       id: createPlantId(),
-      name: "Arbousier" as PlantName,
+      name: "Arbousier + Framboisier Fallgold" as PlantName,
       position: {
         lat: 48.626996186688075,
         lng: -2.433812079920929,
@@ -471,25 +471,25 @@ export const initialPlantState: PlantState = {
     },
     {
       id: createPlantId(),
-      name: "Pêcher" as PlantName,
+      name: `Groseiller à maquereau "White Smith"` as PlantName,
       position: {
         lat: 48.62708499315286,
         lng: -2.4338088351421843,
       },
-      currentDiameter: 0.5,
-      expectedDiameter: 3,
-      status: "to sow",
+      currentDiameter: 1,
+      expectedDiameter: 2,
+      status: "to plant",
     },
     {
       id: createPlantId(),
-      name: "Pêche plate" as PlantName,
+      name: `Groseiller "Jonkheer van Tets"` as PlantName,
       position: {
         lat: 48.62714136599475,
         lng: -2.4336582519787657,
       },
       currentDiameter: 1,
-      expectedDiameter: 3,
-      status: "to sow",
+      expectedDiameter: 2,
+      status: "to plant",
     },
     {
       id: createPlantId(),
@@ -559,14 +559,14 @@ export const initialPlantState: PlantState = {
     },
     {
       id: createPlantId(),
-      name: "Mirabellier/Myrobolan" as PlantName,
+      name: `Mirabellier + Framboisier "Zeva"` as PlantName,
       position: {
         lat: 48.62741194585056,
         lng: -2.4336796522262376,
       },
       currentDiameter: 1,
       expectedDiameter: 5,
-      status: "to plant",
+      status: "position requires verification",
     },
   ],
   byRelativeDistance: { a: {}, b: {} },
