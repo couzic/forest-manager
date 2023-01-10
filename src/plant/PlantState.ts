@@ -471,14 +471,25 @@ export const initialPlantState: PlantState = {
     },
     {
       id: createPlantId(),
-      name: `Groseiller à maquereau "White Smith"` as PlantName,
+      name: `Groseiller à maquereau "White Smith" (nord)` as PlantName,
       position: {
         lat: 48.62708499315286,
         lng: -2.4338088351421843,
       },
       currentDiameter: 1,
       expectedDiameter: 2,
-      status: "to plant",
+      status: "position requires verification",
+    },
+    {
+      id: createPlantId(),
+      name: `Groseiller à maquereau "White Smith" (sud)` as PlantName,
+      position: {
+        lat: 48.627019119745086,
+        lng: -2.433833494949924,
+      },
+      currentDiameter: 1,
+      expectedDiameter: 2,
+      status: "position requires verification",
     },
     {
       id: createPlantId(),
@@ -489,7 +500,7 @@ export const initialPlantState: PlantState = {
       },
       currentDiameter: 1,
       expectedDiameter: 2,
-      status: "to plant",
+      status: "position requires verification",
     },
     {
       id: createPlantId(),

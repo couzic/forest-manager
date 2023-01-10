@@ -48,6 +48,7 @@ export const ForestMap = reactiveComponent(store.pick("visible"), (menu) => (
         </div>
         <Parcels />
         <PlantMarkers />
+        <AddPlantByRelativeDistancePossiblePositions />
       </MapContainer>
     </div>
     <div
@@ -57,7 +58,6 @@ export const ForestMap = reactiveComponent(store.pick("visible"), (menu) => (
         height: "100vh",
       }}
     >
-      <AddPlantByRelativeDistancePossiblePositions />
       <ForestMapMenu />
     </div>
   </>
