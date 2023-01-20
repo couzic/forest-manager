@@ -6,9 +6,11 @@ import { reactiveComponent } from "../util/reactiveComponent";
 
 const plantColorByStatus: Record<PlantStatus, string> = {
   "to plant": "blue",
+  planted: "green",
   "to sow": "lightblue",
   sowed: "lightgreen",
-  "position requires verification": "red",
+  "position requires verification": "tomato",
+  dead: "red",
 };
 
 const getPlantColor = (plant: Plant) =>
@@ -35,7 +37,12 @@ export const PlantMarkers = reactiveComponent(
             stroke={false}
           >
             <Tooltip direction="top">
-              <h3>{plant.name}</h3>
+              <h3>
+                {plant.status === "dead" && "DEAD - "}
+                {plant.name}
+                {plant.status === "to sow" && " - A SEMER"}
+                {plant.status === "sowed" && " (semis)"}
+              </h3>
               <h4>Diamètre actuel: {plant.currentDiameter}m</h4>
               <h4>Diamètre attendu: {plant.expectedDiameter}m</h4>
             </Tooltip>

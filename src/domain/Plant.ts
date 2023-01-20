@@ -5,9 +5,11 @@ export type PlantId = "PlantId";
 export type PlantName = "PlantName";
 export type PlantStatus =
   | "to plant"
-  | "sowed"
+  | "planted"
   | "to sow"
-  | "position requires verification";
+  | "sowed"
+  | "position requires verification"
+  | "dead";
 
 export interface Plant {
   id: PlantId;
